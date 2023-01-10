@@ -35,6 +35,8 @@ import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
 import zic from '../assets/zic.png';
+import image1 from '../assets/image1.png';
+import image from '../assets/image.png';
 
 export default {
 email,
@@ -71,4 +73,6 @@ email,
   skype,
   spotify,
   zic,
+  image1,
+  image,
 };
