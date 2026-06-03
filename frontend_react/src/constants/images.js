@@ -31,14 +31,11 @@ import zic from '../assets/zic.png';
 
 import image from '../assets/image.png';
 
-export default {
-email,
+const images = {
+  email,
   mobile,
-  
-  
   css,
   figma,
- 
   git,
   graphql,
   html,
@@ -50,17 +47,12 @@ email,
   redux,
   sass,
   typescript,
-  
-  
   circle,
-  
-  
   php,
   mysql,
   laravel,
- 
-  
   zic,
-  
   image,
 };
+
+export default images;
