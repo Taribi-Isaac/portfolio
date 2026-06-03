@@ -10,6 +10,9 @@ import javascript from '../assets/javascript.png';
 import mu5 from '../assets/mu5.png';
 import node from '../assets/node.png';
 import python from '../assets/python.png';
+import php from '../assets/php.png';
+import laravel from '../assets/laravel.png';
+import mysql from '../assets/mysql.png';
 import react from '../assets/react.png';
 import redux from '../assets/redux.png';
 import sass from '../assets/sass.png';
@@ -52,8 +55,9 @@ email,
   circle,
   
   
-  
- 
+  php,
+  mysql,
+  laravel,
  
   
   zic,

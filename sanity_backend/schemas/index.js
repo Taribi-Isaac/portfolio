@@ -6,8 +6,10 @@ import abouts from "./abouts";
 import skills from "./skills";
 import workExperience from "./workExperience";
 import works from "./works";
+import siteSettings from "./siteSettings";
 
 export const schemaTypes = [
+  siteSettings,
   testimonials,
   works,
   workExperience,

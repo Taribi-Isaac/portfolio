@@ -3,14 +3,16 @@ import React, { useState } from 'react';
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
+import { useSiteSettings } from '../../context/SiteSettingsContext';
 import './Footer.scss';
 
 const Footer = () => {
+  const { contactEmail, contactPhone, contactPhoneTel, copyright } = useSiteSettings();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { username, email, message } = formData;
+  const { name, email, message } = formData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -22,7 +24,7 @@ const Footer = () => {
 
     const contact = {
       _type: 'contact',
-      name: formData.username,
+      name: formData.name,
       email: formData.email,
       message: formData.message,
     };
@@ -42,17 +44,17 @@ const Footer = () => {
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
-          <a href="mailto:taribiforyou@gmail.com" className="p-text">taribiforyou@gmail.com</a>
+          <a href={`mailto:${contactEmail}`} className="p-text">{contactEmail}</a>
         </div>
         <div className="app__footer-card">
           <img src={images.mobile} alt="phone" />
-          <a href="tel:+(234) 906-7322344" className="p-text">+234 906-7322344</a>
+          <a href={`tel:${contactPhoneTel}`} className="p-text">{contactPhone}</a>
         </div>
       </div>
       {!isFormSubmitted ? (
         <div className="app__footer-form app__flex">
           <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
+            <input className="p-text" type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput} />
           </div>
           <div className="app__flex">
             <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
@@ -76,9 +78,9 @@ const Footer = () => {
         </div>
       )}
       <div className="copyright">
-          <p className="p-text">@2022 ISAAC TARIBI</p>
-          <p className="p-text">All rights reserved</p>
-        </div>
+        <p className="p-text">{copyright.line1}</p>
+        <p className="p-text">{copyright.line2}</p>
+      </div>
     </>
   );
 };
